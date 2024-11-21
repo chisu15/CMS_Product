@@ -4,7 +4,15 @@ html{
     padding: 0;
     top: 0;
     left: 0;
+    height: 100vh !important;
+    
+}
+body{
+    height: 100vh !important;
+}
+.row{
     height: 100vh;
+    background-color: #FDF1DA !important;
 }
 #sidebar {
     margin-top: 80px;
@@ -15,7 +23,7 @@ html{
     width: 230px;
     position: fixed;
     z-index: 1000;
-    left: -250px;
+    /* left: -250px; */
     top: 0;
 }
 .nav{
@@ -27,7 +35,11 @@ html{
 #sidebar.open {
     left: 0;
 }
-
+.bth-admin-logout{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
 .nav-link{
     width: 80%;
     color: white !important;  
@@ -43,6 +55,23 @@ html{
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.nav-username{
+    width: 80%;
+    color: white !important;  
+    font-family: niramit;
+    font-weight: bold;   
+    display: flex;
+    text-decoration: none;
+    font-size: 1rem;
+    /* margin-left: 10px; */
+    transition: all 0.2s ease;
+    font-size: 16px;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #FDF1DA;
+}
+
 .nav-link .material-symbols-outlined
 {
     display: flex;
@@ -187,5 +216,11 @@ tbody{
     font-size: 18px;
     font-weight: bolder;
     margin: 0;
+}
+.item-title{
+    color: #211544 !important;
+}
+.item-title:hover{
+    color: #B197FC !important;
 }
 /*  */

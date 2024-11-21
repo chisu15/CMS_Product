@@ -7,6 +7,7 @@
         
         <img class="navbar-brand ms-3 object-fit-contain w-auto h-" src="../imgs/logo.png" href="dashboard.php" alt="Game Store"></a>
         <!-- <div class="navbar-brand ms-3 text-center align-middle "></div> -->
+         
         <a href="../logout.php" class="ms-auto">
             <button class="btn btn-danger" type="button">Logout</button>
         </a>

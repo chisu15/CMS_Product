@@ -3,11 +3,9 @@
     // include("../middlewares/adminMiddleware.php");
 ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Hello Admin</h2>
-        </div>
+<!-- <div class="container">
+    <div class="row"> -->
+    <h1 class="page-title text-center mt-2">Dashboard</h1>
         <div class="statistics ms-1 row mb-3">
                     <div class="col-md-3">
                         <div id="product" class="analyst-box row rounded-4 p-3 text-white bg-primary mb-3">
@@ -62,9 +60,9 @@
                         </div>
                     </div>
                 </div>
-    </div>
+    <!-- </div>
     
-</div>
+</div> -->
 
 <?php
     include("./includes/footer.php");

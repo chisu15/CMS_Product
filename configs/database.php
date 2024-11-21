@@ -13,6 +13,6 @@
         die("Connection to Database failed". mysqli_connect_error());
     }
     else{
-        echo"Connection to Database successfully";
+        // echo"Connection to Database successfully";
     }
 ?>
