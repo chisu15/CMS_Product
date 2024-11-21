@@ -1,0 +1,114 @@
+
+.center-img {
+    height: 100%;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: auto;
+}
+
+.img-game {
+    max-width: 12rem !important;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.btn{
+    color: white !important;
+    font-family: niramit !important;
+    font-weight: 600;
+}
+/* #show5, #show10, #show20, .pagination .btn{
+    color: #211544 !important;
+} */
+
+/* Nút số lượng sản phẩm mỗi trang */
+.btn-outline-primary {
+    border-radius: 20px;
+    padding: 0.375rem 0.75rem;
+    font-weight: 600;
+    color: #211544 !important;
+}
+.btn-outline-primary.active, .btn-outline-primary:hover {
+    background-color: #211544  !important;
+    color: #FDF1DA !important;
+    border-color: #211544  !important;
+}
+
+.img-game {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Thanh phân trang */
+.pagination .page-item.active .page-link {
+    background-color: #211544 !important;
+    border-color: #211544 !important;
+}
+.pagination .page-link {
+    color: #211544 !important;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+.pagination .page-link:hover {
+    background-color: #211544 !important;
+    color: #211544 !important;
+}
+.page-title{
+    border-bottom: #211544 5px solid;
+    padding-bottom: 3px;
+}
+.return{
+    color: #211544;
+}
+.return:hover{
+    color: #B197FC;
+}
+.img-fluid{
+    height: 12rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: #211544;
+}
+.sub
+{
+    font-family: niramit;
+    color: #211544;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    margin-top: -30px;
+}
+.sub-user, .sub-date, .sub-views
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sub span 
+{
+    font-size: 25px;
+}
+.sub-views span
+{
+    color: rgb(1, 149, 255);
+}
+.sub-user a
+{
+    text-decoration: none;
+    color: #B197FC;
+}
+.sub-user a:hover
+{
+    color: #7b6aaf;
+}
+.game-req{
+    border: #211544 2px solid !important;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}

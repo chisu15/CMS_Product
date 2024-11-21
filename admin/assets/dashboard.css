@@ -1,0 +1,56 @@
+#product {
+	/* border: solid black 0.1px !important; */
+	background: #e9d794 !important;
+	width: 100%;
+}
+#order {
+	background: #63e6be !important;
+	width: 100%;
+}
+#user {
+	background: #e599f7 !important;
+	width: 100%;
+}
+#post {
+	background: #b197fc !important;
+	width: 100%;
+}
+.page-title {
+    text-align: center;
+	height: fit-content;
+	padding-inline: 30%;
+	margin-top: -3px;
+	margin-bottom: 2rem;
+	border-bottom: #211544 solid 4px;
+	color: #211544 !important
+}
+
+.analyst-box {
+	box-shadow: 8px 8px 1.6px 1.6px #422e7e;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+}
+.analyst-box:hover {
+	box-shadow: none;
+	/* border: #422e7e solid 0.5px; */
+	box-shadow: 3px 3px 0.8px 0.8px #422e7e;
+}
+.icon {
+	background-color: white;
+	color: #211544 !important;
+	font-size: 3.6rem;
+	border-radius: 50%;
+	padding: 1rem;
+}
+.info-box {
+	font-family: Niramit;
+	color: #211544 !important;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 2rem;
+}
+.card-text {
+	font-weight: bolder !important;
+	font-size: x-large;
+}

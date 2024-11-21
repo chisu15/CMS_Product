@@ -1,0 +1,11 @@
+/* #211544 */
+/* #FDF1DA */
+.login{
+    background-color: #211544 !important;
+    background-image: url('../public/library_hero (2).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    background-blend-mode: screen;
+    /* color: #FDF1DA; */
+}

@@ -1,0 +1,191 @@
+html{
+    font-family: Niramit !important;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+#sidebar {
+    margin-top: 80px;
+    background-color: #211544;
+    /* padding: 0; */
+    height: 100vh;
+    transition: all 0.3s ease;
+    width: 230px;
+    position: fixed;
+    z-index: 1000;
+    left: -250px;
+    top: 0;
+}
+.nav{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+#sidebar.open {
+    left: 0;
+}
+
+.nav-link{
+    width: 80%;
+    color: white !important;  
+    font-family: niramit;
+    font-weight: bold;   
+    display: flex;
+    text-decoration: none;
+    font-size: 1rem;
+    /* margin-left: 10px; */
+    transition: all 0.2s ease;
+    font-size: 16px;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.nav-link .material-symbols-outlined
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 10px;
+}
+.nav-link.active {
+    margin-left:  calc(1.5rem - 3px);
+    background-color: #FDF1DA !important;
+    color: #211544 !important;             
+    font-weight: bold;   
+    border-radius: 10px;
+    border-radius: 10px;   
+       
+}
+.nav-link.active::before
+{
+    content: '';
+    width: 8px;
+    height: 20px;
+    background-color: #211544;
+    margin-left: 20px;
+}
+.nav-link:hover{
+
+    margin-left: 28px;
+    color: #FDF1DA !important;
+}
+.nav-link.active:hover{
+    color: #211544 !important;
+}
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    #sidebar {
+        left: 0; /* Sidebar luôn hiện trên màn hình lớn */
+    }
+
+    main {
+        margin-left: 250px; /* Khoảng trống cho Sidebar */
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        left: -250px; /* Sidebar ẩn trên màn hình nhỏ */
+    }
+
+    main {
+        margin-left: 1rem;
+    }
+
+    #sidebar.open {
+        left: 0; /* Sidebar hiện ra khi có class 'open' */
+    }
+}
+h1{
+    font-family: niramit;
+    font-weight: bolder;
+}
+/* Main content adjustments */
+main {
+    transition: margin-left 0.3s ease;
+    margin-top: 80px !important;
+    margin-bottom: 80px;
+}
+
+.navbar{
+    background-color: #211544 !important;
+    height: 80px;
+    width: 100vw;
+    font-family: Niramit;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 15px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    
+    
+}
+.navbar-brand{
+    object-fit: contain;
+    width: auto;
+    height: 60px;
+}
+button{
+    font-family: Niramit;
+    border-radius: 8px !important;
+}
+.container-fluid {
+    background-color: #FDF1DA;
+}
+
+td{
+    color: black;
+    font-family: niramit !important;
+    padding: 2rem;
+    /* font-weight: bolder; */
+}
+.table-dark{
+    border-top: #211544 1px solid !important;
+    --bs-table-bg:#FDF1DA !important;
+    /* color: #211544; */
+    --bs-table-color:#211544 !important;
+}
+th, td {
+    text-align: center !important;
+    align-items: center;
+}
+.filter-box{
+    border: #211544 1px solid;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+h5{
+    background-color: #211544 !important;
+    color: #FDF1DA;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+#filter-form{
+    font-family: niramit;
+    font-weight: 600;
+    font-size: 18px;
+}
+.list{
+    border: #211544 2px solid;
+    border-radius: 24px;
+}
+tbody{
+    border-bottom-left-radius: 24px !important;
+    border-bottom-right-radius: 24px !important;
+}
+#paging{
+    font-family: niramit;
+    font-size: 18px;
+    font-weight: bolder;
+    margin: 0;
+}
+/*  */
