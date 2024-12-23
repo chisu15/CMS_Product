@@ -1,8 +1,8 @@
 <?php
-session_start();   
+// session_start();   
 
 if (isset($_SESSION["auth"])) {
-    $_SESSION['message'] = 'You are already logged in';
+    $_SESSION['message'] = 'Bạn đã đăng nhập rồi';
     header("Location: index.php");
     exit();
 }
@@ -30,20 +30,20 @@ include("includes/header.php");
                 ?>
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="text-center">Login form</h1>
+                        <h1 class="text-center">Đăng nhập</h1>
                     </div>
                     <div class="card-body">
                         <form action="functions/authcode.php" method="POST">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <label for="exampleInputEmail1" class="form-label">Địa chỉ Email</label>
                                 <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
                                 <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
                             </div>
 
-                            <button type="submit" name="login_btn" class="btn btn-primary">Login</button>
+                            <button type="submit" name="login_btn" class="btn btn-primary">Đăng nhập</button>
                         </form>
                     </div>
                 </div>

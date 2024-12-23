@@ -1,5 +1,6 @@
 <?php
-include("../configs/database.php");
+// session_start();
+include("configs/database.php");
 
 function getAll($table)
 {
@@ -14,8 +15,6 @@ function getAll($table)
     }
     return $data;
 }
-
-
 function getById($table, $id)
 {
     global $con;
@@ -30,7 +29,26 @@ function getById($table, $id)
 
     return null;
 }
-
+function getAllActive($table)
+{
+    global $con;
+    $query = "SELECT * FROM $table WHERE status = '1'";
+    
+    return $result = mysqli_query($con, $query);
+}
+function getAllTrend($table)
+{
+    global $con;
+    $query = "SELECT * FROM $table WHERE trending = '1'";
+    $result = mysqli_query($con, $query);
+    $data = [];
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+    }
+    return $data;
+}
 
 function redirect($url, $message)
 {
@@ -39,4 +57,4 @@ function redirect($url, $message)
     exit();
 }
 
-
+?>

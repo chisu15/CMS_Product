@@ -1,3 +1,6 @@
+<?php
+    $page = substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'],"/")+1);
+?>
 <div class="col-md-3 col-lg-2 p-0 h-100 mt-0" id="sidebar">
     <nav class="nav flex-column justify-content-around gap-0">
         <div class="d-flex justify-content-center align-content-center">
@@ -9,26 +12,26 @@
             </a>
         </div>
         <div class="d-flex flex-column align-content-center gap-2 h-auto mb-5">
-            <a id="dashboard-link" class="nav-link" href="index.php"><span class="material-symbols-outlined">
+            <a id="dashboard-link" class="nav-link <?= $page == "index.php"? 'active':''; ?>" href="index.php"><span class="material-symbols-outlined">
                 dashboard
-            </span>Dashboard</a>
-            <a id="products-link" class="nav-link" href="products.php"><span class="material-symbols-outlined">
+            </span>Thống kê</a>
+            <a id="products-link" class="nav-link <?= $page == "products.php"? 'active':''; ?>" href="products.php"><span class="material-symbols-outlined">
                 inventory_2
-            </span>Products</a>
-            <a id="categories-link" class="nav-link" href="categories.php"><span class="material-symbols-outlined">
+            </span>Sản phẩm</a>
+            <a id="categories-link" class="nav-link <?= $page == "categories.php"? 'active':''; ?>" href="categories.php"><span class="material-symbols-outlined">
                 category
-            </span>Categories</a>
+            </span>Danh mục</a>
             <a id="users-link" class="nav-link" href="users.php"><span class="material-symbols-outlined">
                 group
-            </span>Users</a>
+            </span>Người dùng</a>
             
             <a id="orders-link" class="nav-link" href="payments.php"><span class="material-symbols-outlined">
                 Payments
-            </span>Payments</a>
+            </span>Hóa đơn</a>
         </div>
         <div class="bth-admin-logout">
-            <a href="../logout.php" class=" nav align-content-center ms-auto text-center text-decoration-none ">
-                <button class="btn btn-danger h-100 px-4" type="button">Logout</button>
+            <a href="../logout.php" class="btn btn-danger text-center text-decoration-none ">
+                Đăng xuất
             </a>
         </div>
     </nav>

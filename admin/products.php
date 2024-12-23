@@ -6,62 +6,67 @@ include("includes/header.php");
 
 <!-- <div class="container">
     <div class="row"> -->
-
-    <h1 class="mt-4 page-title text-center">Danh mục</h1>
-
-
+    <h1 class="page-title text-center mt-4">Sản phẩm</h1>
+<div class="filter-box col text-center g-3 mb-4 mt-auto">
 
 <!-- Product Table -->
 <div class="list">
-    <h5 class="text-center p-2">Danh sách danh mục</h5>
+    <h5 class="text-center p-2">Danh sách sản phẩm</h5>
     <form action="create" method="post">
         <div class="d-flex align-items-center justify-content-around text-end mb-3 p-2">
             <div class="d-flex flex-row align-items-center justify-content-center gap-2">
-                <p class="text-center mb-0" id="paging">Danh mục mỗi trang:</p>
+                <p class="text-center mb-0" id="paging">Sản phẩm mỗi trang:</p>
                 <button type="button" class="btn btn-outline-primary" id="show5">5</button>
                 <button type="button" class="btn btn-outline-primary" id="show10">10</button>
                 <button type="button" class="btn btn-outline-primary" id="show20">20</button>
             </div>
-            <a href="create-category.php" class="btn btn-success w-25 text">Tạo danh mục mới</a>
+            <a href="create-product.php" class="btn btn-success w-25 text">Tạo sản phẩm mới</a>
         </div>
     </form>
 
+    <!-- Product Table -->
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>
-                <th class="align-middle">#</th>
-                <th class="align-middle">Tiêu đề</th>
+                <th class="first align-middle">#</th>
+                <th class="align-middle">Tên</th>
                 <th class="align-middle">Hình ảnh</th>
+                <th class="align-middle">Trạng thái</th>
+                <th class="align-middle">Danh mục</th>
+                <th class="align-middle">Giá</th>
                 <th class="align-middle">Thời gian tạo</th>
-                <th class="text-center">Hành động</th>
+                <th class="last text-center">Hành động</th>
             </tr>
         </thead>
-        <tbody id="categoryTable">
-            <?php
-            $categories = getAll("categories");
+        <tbody id="productTable">
+        <?php
+            $products = getAll("products");
 
-            if (count($categories) > 0) {
-                for ($i = 0; $i < count($categories); $i++) {
+            if (count($products) > 0) {
+                for ($i = 0; $i < count($products); $i++) {
             ?>
                     <tr class="align-middle">
                         <td><?= $i + 1; ?></td>
                         <td>
-                            <a class="text-decoration-none item-title text-black" href="edit-category.php?id=<?= $categories[$i]['id']; ?>">
-                                <?= $categories[$i]['title']; ?>
+                            <a class="text-decoration-none item-title text-black" href="edit-product.php?id=<?= $products[$i]['id']; ?>">
+                                <?= $products[$i]['name']; ?>
                             </a>
                         </td>
                         <td>
-                            <img class="object-fit-contain h-auto" width="100px" src="../uploads/<?= $categories[$i]['image']; ?>"
-                                alt="<?= $categories[$i]['title']; ?>" width="100">
+                            <img class="object-fit-contain h-auto" width="100px" src="../uploads/<?= $products[$i]['image']; ?>"
+                                alt="<?= $products[$i]['name']; ?>" width="100">
                         </td>
-                        <td><?= $categories[$i]['created_at']; ?></td>
+                        <td><?= $products[$i]['status']== 1 ? "Hoạt động" : "Không hoạt động"; ?></td>
+                        <td><?= getById("categories", $products[$i]['category_id'])['title']; ?></td>
+                        <td><?= $products[$i]['original_price']; ?></td>
+                        <td><?= $products[$i]['created_at']; ?></td>
                         <td>
-                            <a href="edit-category.php?id=<?= $categories[$i]['id']; ?>"><button class="btn btn-warning">Chỉnh sửa</button></a>
+                            <a href="edit-product.php?id=<?= $products[$i]['id']; ?>"><button class="btn btn-warning">Chỉnh sửa</button></a>
                             <!-- Nút mở modal -->
-                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $categories[$i]['id']; ?>">Xóa</button>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $products[$i]['id']; ?>">Xóa</button>
 
                             <!-- Modal Confirm Delete -->
-                            <div class="modal fade" id="deleteModal<?= $categories[$i]['id']; ?>" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="deleteModal<?= $products[$i]['id']; ?>" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -69,13 +74,13 @@ include("includes/header.php");
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Xác nhận xóa danh mục "<strong><?= $categories[$i]['title']; ?></strong>"?
+                                            Xác nhận xóa sản phẩm"<strong><?= $products[$i]['name']; ?></strong>"?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                                             <form action="code.php" method="POST" class="d-inline">
-                                                <input type="hidden" name="id" value="<?= $categories[$i]['id']; ?>">
-                                                <button type="submit" name="delete_category_btn" class="btn btn-danger">Xóa</button>
+                                                <input type="hidden" name="id" value="<?= $products[$i]['id']; ?>">
+                                                <button type="submit" name="delete_product_btn" class="btn btn-danger">Xóa</button>
                                             </form>
                                         </div>
                                     </div>
@@ -86,11 +91,10 @@ include("includes/header.php");
             <?php
                 }
             } else {
-                echo "<tr><td colspan='5'>Không tìm thấy danh mục</td></tr>";
+                echo "<tr><td colspan='5'>No records found</td></tr>";
             }
             ?>
         </tbody>
-
     </table>
 
     <!-- Pagination -->

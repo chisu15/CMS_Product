@@ -13,7 +13,7 @@
         $check_email_query = "SELECT email FROM users WHERE email='$email'";
         $check_email_query_run = mysqli_query($con, $check_email_query );
         if (mysqli_num_rows($check_email_query_run) > 0) {
-            redirect('../register.php', "Email already registered");
+            redirect('../register.php', "Email đã được sử dụng");
             // $_SESSION['message'] = "Email already registered";
             // header("Location: ../register.php");
         }else{
@@ -22,17 +22,17 @@
                 $query_run = mysqli_query($con, $query);
     
                 if($query_run){
-                    redirect("../login.php", "Register successfully");
+                    redirect("../login.php", "Đăng ký thành công");
 
                     // $_SESSION['message'] = "Register successfully";
                     // header("Location: ../login.php");
                 }else{
-                    redirect("../register.php", "Something went wrong");
+                    redirect("../register.php", "Đã xảy ra lỗi");
                     // $_SESSION['message'] = "Something went wrong";
                     // header("Location: ../register.php");
                 }
             }else{
-                redirect("../register.php", "Password do not match");
+                redirect("../register.php", "Mật khẩu không đúng");
                 // $_SESSION['message'] = "Password do not match";
                 // header("Location: ../register.php");
             }
@@ -59,17 +59,17 @@
             $_SESSION['role'] = $role;
 
             if($role == 1){
-                redirect("../admin/index.php", "Welcome to Dashboard");
+                redirect("../admin/index.php", "Chào mừng đến với trang Quản lý");
                 // $_SESSION['message'] = "Welcome to Dashboard";
                 // header("Location: ../admin/index.php");
             }else{
-                redirect("../index.php", "Logged In Successfully");
+                redirect("../index.php", "Đăng nhập thành công");
                 // $_SESSION['message'] = "Logged In Successfully";
                 // header("Location: ../index.php");
             }
 
         }else{
-            redirect("../login.php", "Invalid Credentials");
+            redirect("../login.php", "Thông tin không đúng");
             // $_SESSION["message"] = "Invalid Credentials";
             // header("Location: ../login.php");
         }

@@ -3,9 +3,9 @@
 
     if (isset($_SESSION['auth'])){
         if ($_SESSION['role'] != 1){
-            redirect("../index.php", "You are not authorized to access this page");
+            redirect("../index.php", "Bạn không có quyền truy cập vào trang này");
         }
     }else{
-        redirect("../login.php", "Login to continue");
+        redirect("../login.php", "Đăng nhập để tiếp tục");
     }
 ?>

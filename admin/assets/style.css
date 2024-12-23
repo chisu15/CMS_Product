@@ -5,15 +5,12 @@ html{
     top: 0;
     left: 0;
     height: 100vh !important;
-    
+    background-color: #FDF1DA;
 }
 body{
     height: 100vh !important;
 }
-.row{
-    height: 100vh;
-    background-color: #FDF1DA !important;
-}
+
 #sidebar {
     margin-top: 80px;
     background-color: #211544;
@@ -39,9 +36,11 @@ body{
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
+    text-align: center;
 }
 .nav-link{
-    width: 80%;
+    width: 100%;
     color: white !important;  
     font-family: niramit;
     font-weight: bold;   
@@ -138,7 +137,7 @@ h1{
 /* Main content adjustments */
 main {
     transition: margin-left 0.3s ease;
-    margin-top: 80px !important;
+    margin-top: 20px !important;
     margin-bottom: 80px;
 }
 
